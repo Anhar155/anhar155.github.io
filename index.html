@@ -132,7 +132,7 @@
   .current-role .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
   .current-role strong{font-weight:600;color:var(--accent)}
   .stats{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
   }
   .stat{
     background:var(--card);border:1px solid var(--line);border-radius:14px;
@@ -141,6 +141,16 @@
   .stat:hover{border-color:var(--accent);transform:translateY(-3px)}
   .stat .num{font-size:1.7rem;font-weight:700;color:var(--accent);line-height:1.1;margin-bottom:6px;letter-spacing:-.5px}
   .stat .lbl{font-size:.82rem;color:var(--ink-soft);font-weight:400;line-height:1.4}
+  .stat-feature{
+    grid-column:1 / -1;
+    background:var(--ink);border:1px solid var(--ink);border-radius:14px;
+    padding:26px 24px;text-align:center;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .25s;
+  }
+  .stat-feature:hover{transform:translateY(-3px)}
+  .stat-feature .line{font-size:clamp(1.05rem,2.4vw,1.35rem);font-weight:600;color:var(--bg);line-height:1.6}
+  .stat-feature .line .hl{color:#8FD0A6}
   @media(max-width:760px){
     .stats{grid-template-columns:repeat(2,1fr)}
   }
@@ -187,7 +197,7 @@
       <a href="#tools">أدوات ومصادر</a>
       <a href="#blog">المدونة</a>
       <a href="#media">اللقاءات</a>
-      <a href="#contact" class="nav-cta">تواصل معي</a>
+      <a href="https://sa.linkedin.com/in/anhar-alsayed-739626a3" target="_blank" rel="noopener" class="nav-cta">تواصل معي</a>
     </nav>
     <button class="burger" id="burger" aria-label="القائمة">☰</button>
   </div>
@@ -200,13 +210,11 @@
     <h1>أنهار</h1>
     <p class="tag">مديرة منتج رقمي — متخصصة في الأسواق الإلكترونية.<br>هنا أدوّن ما أتعلمه من بناء المنتجات، ومن التفاصيل التي تثير فضولي في العمل، والسفر، والحياة.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">تواصل معي</a>
+      <a href="https://sa.linkedin.com/in/anhar-alsayed-739626a3" target="_blank" rel="noopener" class="btn btn-primary">تواصل معي</a>
       <a href="#portfolio" class="btn btn-ghost">ما طوّرته</a>
     </div>
     <div class="socials">
-      <a href="#">لينكد إن</a>
-      <a href="#">إكس</a>
-      <a href="mailto:hello@example.com">البريد</a>
+      <a href="https://sa.linkedin.com/in/anhar-alsayed-739626a3" target="_blank" rel="noopener">لينكد إن</a>
       <a href="#blog">المدونة</a>
     </div>
   </section>
@@ -214,11 +222,11 @@
   <section class="block wrap" id="summary" style="padding-top:32px">
     <div class="current-role reveal"><span class="dot"></span>مكان العمل الحالي: <strong>مديرة منتج محلي</strong></div>
     <div class="stats">
-      <div class="stat reveal"><div class="num">+١٤ مليون</div><div class="lbl">منتج في البحث</div></div>
-      <div class="stat reveal"><div class="num">٦ سنوات</div><div class="lbl">خبرة في المنتج</div></div>
-      <div class="stat reveal"><div class="num">٣ أنواع</div><div class="lbl">بحث: منتجات، متاجر، كوبونات</div></div>
-      <div class="stat reveal"><div class="num">٤ أنظمة</div><div class="lbl">ترتيب مختلفة</div></div>
-      <div class="stat reveal"><div class="num">A/B</div><div class="lbl">اختبار قبل كل إطلاق</div></div>
+      <div class="stat-feature reveal"><div class="line">أبني ما يصنع فرقًا للمستخدم <span class="hl">ويظهر أثره في الأرقام</span></div></div>
+      <div class="stat reveal"><div class="num">+٦ سنوات</div><div class="lbl">خبرة في المنتج</div></div>
+      <div class="stat reveal"><div class="num">+٣ سنوات</div><div class="lbl">خبرة في أنظمة البحث والتوصيات</div></div>
+      <div class="stat reveal"><div class="num">+١٩ نظام</div><div class="lbl">من الترتيب إلى المحفظة والإحالة</div></div>
+      <div class="stat reveal"><div class="num">+٤٠ ميزة</div><div class="lbl">أطلقتها في المنتج</div></div>
     </div>
   </section>
 
@@ -291,12 +299,6 @@
     <a class="media-item" href="#"><div class="m-left"><div class="kind">جلسة داخلية</div><h3>دروس من ترتيب ٩ ملايين منتج</h3><div class="src">Open Mic — مشاركة داخلية</div></div><span class="m-go">شاهد ←</span></a>
     <a class="media-item" href="#"><div class="m-left"><div class="kind">مقال مرجعي</div><h3>التخصيص في الأسواق الإلكترونية</h3><div class="src">تحليل تنافسي — وثيقة منشورة</div></div><span class="m-go">اقرأ ←</span></a>
     <a class="media-item" href="#"><div class="m-left"><div class="kind">ورشة</div><h3>تصميم أنظمة الترتيب من الصفر</h3><div class="src">جلسة عمل مع الفريق</div></div><span class="m-go">التفاصيل ←</span></a>
-  </section>
-
-  <section class="contact wrap" id="contact">
-    <h2>تواصل معي</h2>
-    <p>سعيدة بأي نقاش حول المنتج، البحث، أو التخصيص.</p>
-    <div class="socials"><a href="#">لينكد إن</a><a href="#">إكس</a><a href="mailto:hello@example.com">البريد الإلكتروني</a></div>
   </section>
 
 </main>
