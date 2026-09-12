@@ -175,6 +175,34 @@
   }
   .pf-card:hover .pf-tags span{border-color:var(--accent-soft);color:var(--ink)}
 
+  /* portfolio numbered list */
+  .pf-list{display:flex;flex-direction:column;gap:2px}
+  .pf-row{
+    display:flex;align-items:center;gap:22px;
+    padding:26px 24px;border-radius:14px;
+    text-decoration:none;color:inherit;
+    border:1px solid transparent;
+    transition:background .25s,border-color .25s,transform .25s;
+  }
+  .pf-row:hover{background:var(--card);border-color:var(--line);transform:translateX(-6px)}
+  .pf-row .pf-idx{
+    font-size:1.8rem;font-weight:700;color:var(--line);
+    min-width:52px;text-align:center;line-height:1;transition:color .25s;
+    font-feature-settings:"tnum";
+  }
+  .pf-row:hover .pf-idx{color:var(--accent)}
+  .pf-row .pf-ic{
+    width:46px;height:46px;border-radius:12px;background:var(--accent-soft);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:1.35rem;
+  }
+  .pf-row .pf-txt{font-size:1.15rem;font-weight:500;color:var(--ink);line-height:1.5}
+  @media(max-width:640px){
+    .pf-row{gap:14px;padding:20px 14px}
+    .pf-row .pf-idx{font-size:1.4rem;min-width:34px}
+    .pf-row .pf-ic{display:none}
+    .pf-row .pf-txt{font-size:1.02rem}
+  }
+
   @media(max-width:640px){
     nav{position:fixed;inset:64px 0 auto 0;background:var(--bg);flex-direction:column;align-items:stretch;padding:18px 24px;border-bottom:1px solid var(--line);gap:6px;transform:translateY(-130%);transition:transform .3s}
     nav.open{transform:none}
@@ -233,43 +261,12 @@
     <h2>مزايا ومنتجات طوّرتها</h2>
     <p class="sub">على مدى سنوات، صمّمت وأطلقت مزايا ومنتجات تمتد من البحث والترتيب إلى المحافظ والمدفوعات في بيئات السوق الإلكتروني. هذه أبرزها.</p>
 
-    <div class="pf-cards">
-      <div class="pf-card reveal">
-        <div class="pf-top"><div class="pf-icn">🔎</div><div class="pf-name">البحث والترتيب</div></div>
-        <div class="pf-tags">
-          <span>بحث المنتجات والمتاجر والكوبونات</span>
-          <span>ترتيب المنتجات (Ranking)</span>
-          <span>ترتيب الريفيوز</span>
-          <span>ترتيب المتاجر</span>
-          <span>ترتيب الكوبونات</span>
-          <span>اختبار A/B قبل الإطلاق</span>
-          <span>أنظمة التوصيات (Recommendations)</span>
-          <span>تكامل Algolia</span>
-        </div>
-      </div>
-
-      <div class="pf-card reveal">
-        <div class="pf-top"><div class="pf-icn">✨</div><div class="pf-name">التخصيص والكتالوج</div></div>
-        <div class="pf-tags">
-          <span>تخصيص تجربة المستخدم (Personalization)</span>
-          <span>مستودع الأحداث (Events Warehouse)</span>
-          <span>شجرة التصنيفات (Taxonomy)</span>
-          <span>تحسينات الكتالوج</span>
-          <span>التحكم بالصفحة الرئيسية</span>
-        </div>
-      </div>
-
-      <div class="pf-card reveal">
-        <div class="pf-top"><div class="pf-icn">🧩</div><div class="pf-name">منتجات وتجارب بنيتها</div></div>
-        <div class="pf-tags">
-          <span>الإضافة إلى القوائم</span>
-          <span>نظام الإهداء</span>
-          <span>نظام الكوبونات</span>
-          <span>المحفظة الرقمية</span>
-          <span>برنامج الإحالة</span>
-          <span>مستودع الفعاليات</span>
-        </div>
-      </div>
+    <div class="pf-list">
+      <div class="pf-row reveal"><div class="pf-idx">٠١</div><div class="pf-ic">🔎</div><div class="pf-txt">البحث وأنظمة التوصيات</div></div>
+      <div class="pf-row reveal"><div class="pf-idx">٠٢</div><div class="pf-ic">✨</div><div class="pf-txt">أنظمة واستراتيجيات تخصيص تجربة المستخدم</div></div>
+      <div class="pf-row reveal"><div class="pf-idx">٠٣</div><div class="pf-ic">💳</div><div class="pf-txt">المحفظة الرقمية وأنظمة الإحالة</div></div>
+      <div class="pf-row reveal"><div class="pf-idx">٠٤</div><div class="pf-ic">🎁</div><div class="pf-txt">نظام الإهداء والكوبونات</div></div>
+      <div class="pf-row reveal"><div class="pf-idx">٠٥</div><div class="pf-ic">🗂️</div><div class="pf-txt">بناء مستودع تتبع الأحداث (Events Warehouse)</div></div>
     </div>
   </section>
 
@@ -289,7 +286,7 @@
       <a href="https://aanharalsayed.substack.com/" target="_blank" rel="noopener" class="all">كل المقالات ←</a>
     </div>
     <a class="post" href="#"><div class="date">2025 · كواليس المنتجات</div><h3>متى تكون التفاصيل احترافًا… ومتى تتحول إلى عبء؟</h3><p>في الأنظمة المعقّدة كانت التفاصيل هي الطريق. وفي تغييرات بسيطة، تحوّلت إلى ضجيج. هنا يبدأ حكم المنتج الناضج.</p></a>
-    <a class="post" href="https://aanharalsayed.substack.com/p/506" target="_blank" rel="noopener"><div class="date">أبريل 2025 · كواليس المنتجات</div><h3>كيف تشدّ انتباه المستخدم الجديد لمنتجك وتكسر البداية الباردة؟</h3><p>سبعة حلول عملية لمشكلة «البداية الباردة» (Cold Start) في أنظمة التوصيات — كيف تفهم المستخدم الجديد وتخصّص تجربته من اللحظة الأولى دون أن تثقلها.</p></a>
+    <a class="post" href="cold-start.html"><div class="date">أبريل 2025 · كواليس المنتجات</div><h3>كيف تشدّ انتباه المستخدم الجديد لمنتجك وتكسر البداية الباردة؟</h3><p>سبعة حلول عملية لمشكلة «البداية الباردة» (Cold Start) في أنظمة التوصيات — كيف تفهم المستخدم الجديد وتخصّص تجربته من اللحظة الأولى دون أن تثقلها.</p></a>
   </section>
 
   <section class="block wrap" id="media">
